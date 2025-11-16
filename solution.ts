@@ -48,9 +48,16 @@ class Person {
     }
 
     getDetails() {
-        return `Name : ${this.name}, Age:${this.age}`
+        return `'Name : ${this.name}, Age:${this.age}'`
     }
 }
+
+const person1 = new Person('John Doe', 30);
+console.log(person1.getDetails());
+
+const person2 = new Person('Alice', 25);
+console.log(person2.getDetails());
+
 
 
 
@@ -92,6 +99,8 @@ function filterActiveUsers(users: IUsers[]): IUsers[] {
 
 
 
+
+
 interface Book {
     title: string;
     author: string;
@@ -115,6 +124,8 @@ function printBookDetails(book: Book) {
 
     console.log(`Title : ${book.title}, Author:${book.author}, Published:${book.publishedYear}, Available:${availableStatus}`);
 }
+
+
 
 
 
@@ -194,6 +205,8 @@ function calculateTotalPrice(products: Product[]): number {
     }, 0)
 
 }
+
+
 
 
 
