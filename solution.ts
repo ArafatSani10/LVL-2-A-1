@@ -126,7 +126,7 @@ interface Book {
     isAvailable: boolean;
 }
 
-function printBookDetails(book: Book): void {
+function printBookDetails(book: Book) {
 
 
     let availableStatus: string;
@@ -153,6 +153,79 @@ const myBook: Book = {
 printBookDetails(myBook);
 
 
+
+// problem -8
+
+
+interface Product {
+    name: string;
+    price: number;
+    quantity: number;
+    discount?: number
+}
+
+
+function calculateTotalPrice(products: Product[]): number {
+    if (products.length === 0) {
+        return 0;
+    }
+
+
+    return products.reduce((total, product) => {
+        const totalItem = product.price * product.quantity;
+
+        return total + totalItem
+    }, 0)
+
+}
+
+
+const products = [
+    { name: 'Pen', price: 10, quantity: 2 },
+    { name: 'Notebook', price: 25, quantity: 3, discount: 10 },
+    { name: 'Bag', price: 50, quantity: 1, discount: 20 },
+];
+
+console.log(calculateTotalPrice(products));
+
+
+
+
+
+// problem -07
+
+type ArrayType = (number | string)[];
+
+function getUniqueValues(arr1: ArrayType, arr2: ArrayType) {
+    const result: ArrayType = [];
+
+    function existsInArray(array: ArrayType, value: number | string): boolean {
+        for (let i = 0; i < array.length; i++) {
+            if (array[i] === value) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    for (let i = 0; i < arr1.length; i++) {
+        if (!existsInArray(result, arr1[i])) {
+            result[result.length] = arr1[i];
+        }
+    }
+
+    for (let i = 0; i < arr2.length; i++) {
+        if (!existsInArray(result, arr2[i])) {
+            result[result.length] = arr2[i];
+        }
+    }
+
+    return result;
+}
+
+const array1 = [1, 2, 3, 4, 5];
+const array2 = [3, 4, 5, 6, 7];
+console.log(getUniqueValues(array1, array2));
 
 
 
