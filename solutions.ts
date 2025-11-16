@@ -39,6 +39,8 @@ function getLength(value: string | any[]): number {
     }
 }
 
+// test:
+
 // console.log(getLength('typescript'));
 // console.log(getLength([10, 20, 30, 40]));
 
@@ -79,6 +81,8 @@ function filterByRating(value: IBooks[]): IBooks[] {
     return result;
 }
 
+
+// testing:
 const books = [
     { title: 'Book A', rating: 4.5 },
     { title: 'Book B', rating: 3.2 },
@@ -111,6 +115,42 @@ const users = [
 ];
 
 // console.log(filterActiveUsers(users));
+
+
+// problem 6
+
+interface Book {
+    title: string;
+    author: string;
+    publishedYear: number;
+    isAvailable: boolean;
+}
+
+function printBookDetails(book: Book): void {
+
+
+    let availableStatus: string;
+
+    if (book.isAvailable === true) {
+        availableStatus = "Yes"
+    }
+
+    else {
+        availableStatus = "No"
+    }
+
+
+    console.log(`Title : ${book.title}, Author:${book.author}, Published:${book.publishedYear}, Available:${availableStatus}`);
+}
+
+const myBook: Book = {
+    title: 'The Great Gatsby',
+    author: 'F. Scott Fitzgerald',
+    publishedYear: 1925,
+    isAvailable: true,
+};
+
+printBookDetails(myBook);
 
 
 
