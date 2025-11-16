@@ -59,32 +59,60 @@ class Person {
     }
 }
 
-// const person1 = new Person('John Doe', 30);
+const person1 = new Person('John Doe', 30);
 // console.log(person1.getDetails());
 
-// const person2 = new Person('Alice', 25);
+const person2 = new Person('Alice', 25);
 // console.log(person2.getDetails());
 
 
 // problem4
 
 
-interface Books {
+interface IBooks {
     title: String;
     rating: number;
 }
 
-function filterByRating(value: Books[]): Books[] {
-    return value.filter(item => item.rating >= 4);
+function filterByRating(value: IBooks[]): IBooks[] {
+    let result = value.filter(item => item.rating >= 4);
+    return result;
 }
 
-const books: Books[] = [
+const books = [
     { title: 'Book A', rating: 4.5 },
     { title: 'Book B', rating: 3.2 },
     { title: 'Book C', rating: 5.0 },
 ];
 
 // console.log(filterByRating(books));
+
+
+
+// problem 5
+
+
+interface IUsers {
+    id: number;
+    name: string;
+    email: string;
+    isActive: boolean
+}
+
+function filterActiveUsers(users: IUsers[]): IUsers[] {
+    let user = users.filter(user => user.isActive);
+    return user;
+}
+
+const users = [
+    { id: 1, name: 'Rakib', email: 'rakib@example.com', isActive: true },
+    { id: 2, name: 'Asha', email: 'asha@example.com', isActive: false },
+    { id: 3, name: 'Rumi', email: 'rumi@example.com', isActive: true },
+];
+
+// console.log(filterActiveUsers(users));
+
+
 
 
 
